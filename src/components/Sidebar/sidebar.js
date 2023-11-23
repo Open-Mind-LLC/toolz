@@ -7,6 +7,7 @@ import StorageIcon from "@mui/icons-material/Storage";
 import SendIcon from "@mui/icons-material/Send";
 import PermContactCalendarIcon from "@mui/icons-material/PermContactCalendar";
 import MailLockIcon from "@mui/icons-material/MailLock";
+import Shells from "../../pages/Shells/shells";
 
 // const Dashboard = () => <Dashboard />
 const SMTP = () => <div>SMTP Page Content</div>;
@@ -14,7 +15,7 @@ const CPANEL = () => <div>CPANEL Page Content</div>;
 const RDP = () => <div>RDP Page Content</div>;
 const SSH = () => <div>SSH Page Content</div>;
 const WEBMAIL = () => <div>WEBMAIL Page Content</div>;
-const SHELLS = () => <div>SHELLS Page Content</div>;
+const SHELLS = () => <Shells/>
 const MAILERS = () => <div>MAILERS Page Content</div>;
 const ETC = () => <div>ETC Page Content</div>;
 
@@ -54,7 +55,7 @@ const Sidebar = () => {
               selected={selectedMenu === "hosting"}
               onClick={() => handleMenuClick("hosting")}
             >
-              <DropdownLink to="/shells" label="SHELLS" />
+              <DropdownLink to="/shells" label="SHELLS"/>
               <DropdownLink to="/cpanel" label="CPANELS" />
               <DropdownLink to="/rdp" label="RDP" />
               <DropdownLink to="/ssh" label="SSH/WHM" />
