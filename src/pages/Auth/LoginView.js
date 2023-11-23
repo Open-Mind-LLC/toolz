@@ -1,20 +1,21 @@
 import React, { Fragment, useState } from "react";
 import { AuthLayout } from "../../components/Layout";
+import { Link } from "react-router-dom";
 
 const LoginView = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [activePass, setActivePass] = useState(false);
+  const [activeUser, setActiveUser] = useState(false);
 
-  const toggleUserPassword = () => {
+  const toggleUserLogin = () => {
     setIsLoading(true);
     setTimeout(() => {
-      setActivePass(true);
+      setActiveUser(true);
       setIsLoading(false);
     }, 2000);
   };
 
   return (
-    <AuthLayout>
+    <AuthLayout url="auth" urlPath="login">
       {/* Form Container */}
       <div className="justify-center items-center px-[40rem] mt-[10rem]">
         <h2 className="text-3xl text-black-100 my-2 font-bold text-center">
@@ -77,31 +78,47 @@ const LoginView = () => {
           />
 
           <div className="flex justify-end items-end">
-            <a
-              href="/account/password-reset/"
+            <Link
+              to="/account/password-reset/"
               className="text-right text-[#8960A6] text-sm font-normal my-2"
             >
               Forgot Password?
-            </a>
+            </Link>
           </div>
 
           <button
+            className="bg-black-100 hover:bg-[#8960A6] py-3 px-8 mt-3 rounded-md text-base text-white w-full text-center font-normal"
+            onClick={toggleUserLogin}
+          >
+            {isLoading && (
+              <div
+                className="animate-spin inline-block w-4 h-4 border-[2.5px] border-current border-t-transparent text-[#fff] rounded-full dark:text-[#fff] mr-2 -mb-0.5"
+                role="status"
+                aria-label="loading"
+              >
+                <span className="sr-only">Loading...</span>
+              </div>
+            )}
+            Continue
+          </button>
+
+          {/* <button
             className="bg-black-100 hover:bg-[#8960A6] py-3 px-8 mt-3 rounded-md text-base text-white w-full text-center font-semibold"
             onClick={toggleUserPassword}
           >
             Continue
-          </button>
+          </button> */}
         </div>
 
         <p className="text-black-100 text-sm font-light my-4">
           By continuing to browse our site you are accepting our{" "}
-          <a className="text-[#8960A6] hover:underline font-normal" href="/">
+          <Link className="text-[#8960A6] hover:underline font-normal" to="/">
             Cookie Policy
-          </a>{" "}
+          </Link>{" "}
           and{" "}
-          <a className="text-[#8960A6] hover:underline font-normal" href="/">
+          <Link className="text-[#8960A6] hover:underline font-normal" to="/">
             Term's of Use
-          </a>
+          </Link>
         </p>
       </div>
     </AuthLayout>
@@ -109,24 +126,3 @@ const LoginView = () => {
 };
 
 export default LoginView;
-
-/* Color Theme Swatches in Hex */
-// .Color-de-la-marca-1-hex { color: #109BBD; }
-// .Color-de-la-marca-2-hex { color: #4EBFAB; }
-// .Color-de-la-marca-3-hex { color: #8960A6; }
-// .Color-de-la-marca-4-hex { color: #F6B224; }
-// .Color-de-la-marca-5-hex { color: #F7C86D; }
-
-// /* Color Theme Swatches in RGBA */
-// .Color-de-la-marca-1-rgba { color: rgba(16, 154, 188, 1); }
-// .Color-de-la-marca-2-rgba { color: rgba(77, 191, 170, 1); }
-// .Color-de-la-marca-3-rgba { color: rgba(137, 96, 165, 1); }
-// .Color-de-la-marca-4-rgba { color: rgba(246, 177, 35, 1); }
-// .Color-de-la-marca-5-rgba { color: rgba(246, 200, 109, 1); }
-
-// /* Color Theme Swatches in HSLA */
-// .Color-de-la-marca-1-hsla { color: hsla(191, 84, 40, 1); }
-// .Color-de-la-marca-2-hsla { color: hsla(169, 46, 52, 1); }
-// .Color-de-la-marca-3-hsla { color: hsla(275, 28, 51, 1); }
-// .Color-de-la-marca-4-hsla { color: hsla(40, 92, 55, 1); }
-// .Color-de-la-marca-5-hsla { color: hsla(39, 89, 69, 1); }

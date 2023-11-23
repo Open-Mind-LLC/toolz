@@ -1,25 +1,37 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Header = ({ typeUrl }) => {
+const Header = ({ typeUrl, path }) => {
+  console.log("hello header url", typeUrl)
+  console.log("hello header path", path)
   return (
     <header>
       {typeUrl === "auth" ? (
         <div className="flex flex-row justify-between px-4 my-2 w-full">
           <div className="w-[50px] h-[50px]">
-          <img
-            className="w-[50px] h-[50px]"
-            src={require("../../../assets/hacker-logo-icon.png")}
-            alt="Logo"
-          />
+            <img
+              className="w-[50px] h-[50px]"
+              src={require("../../../assets/hacker-logo-icon.png")}
+              alt="Logo"
+            />
           </div>
-         <div className="my-2">
-         <a
-            className="px-10 py-3 bg-black-100 hover:bg-[#8960A6] rounded-md text-base text-white font-normal"
-            href="/"
-          >
-            Sign Up
-          </a>
-         </div>
+          <div className="my-2">
+            {path === "register" ? (
+              <Link
+                className="px-10 py-3 bg-black-100 hover:bg-[#8960A6] rounded-md text-base text-white font-normal"
+                to="/"
+              >
+                Sign In
+              </Link>
+            ) : (
+              <Link
+                className="px-10 py-3 bg-black-100 hover:bg-[#8960A6] rounded-md text-base text-white font-normal"
+                to="/account/register"
+              >
+                Sign Up
+              </Link>
+            )}
+          </div>
         </div>
       ) : (
         <nav>
