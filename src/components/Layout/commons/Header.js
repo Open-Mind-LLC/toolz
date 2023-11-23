@@ -1,5 +1,4 @@
 import React from "react";
-import "./header.module.css";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
