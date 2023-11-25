@@ -17,7 +17,7 @@ const LoginView = () => {
   return (
     <AuthLayout url="auth" urlPath="login">
       {/* Form Container */}
-      <div className="justify-center items-center px-[40rem] mt-[10rem]">
+      <div className="justify-center items-center lg:px-[30rem] mt-[10rem]">
         <h2 className="text-3xl text-black-100 my-2 font-bold text-center">
           Sign in
         </h2>
