@@ -12,14 +12,19 @@ jobs:
         with:
           node-version: "16.x"
           cache: "npm"
-      - name: Install dependencies
-        run: npm ci
-      - name: Build
-        run: npm run build
-      - name: Configure Cpanel and Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: 🔨 Build Project
+        run: |
+          npm install
+          npm run build
+
+      - name: List output files
+        run: find build/-print
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: build/
           server-dir: /store.offshorefinancialtrust.com/
