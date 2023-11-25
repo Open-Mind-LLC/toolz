@@ -1,12 +1,12 @@
 import React from "react";
-import Button from "../../components/Shared/button";
+import Button from "../../../components/Shared/button";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
-import CountBox from "../../components/Shared/CountBox";
+import CountBox from "../../../components/Shared/CountBox";
 import CurrencyBitcoinIcon from "@mui/icons-material/CurrencyBitcoin";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
-import StockPieChart from "../../components/Shared/StockPieChart";
-import StockLegendItem from "../../components/Shared/StockLegendItem";
+import StockPieChart from "../../../components/Shared/StockPieChart";
+import StockLegendItem from "../../../components/Shared/StockLegendItem";
 
 const dashboard = () => {
   const stocks = [
@@ -61,7 +61,7 @@ const dashboard = () => {
           </Button>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 gap-20">
+        <div className="mt-12 lg:grid lg:grid-cols-2 lg:gap-20">
           <div className="h-auto w-auto rounded-md border border-gray-300 p-3">
             <div>
               <div className="flex items-center justify-between">
@@ -103,7 +103,7 @@ const dashboard = () => {
             </div>
           </div>
 
-          <div>
+          <div className="mt-6 lg:mt-0">
             <div className="h-auto w-auto text-sm font-medium rounded-md border border-gray-300 p-3">
               <p>
                 Interested in becoming a Seller at Root Store ?
@@ -124,7 +124,7 @@ const dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="h-auto w-auto rounded-md border border-gray-300 ">
+          <div className="mt-6 lg:mt-0 h-auto w-auto rounded-md border border-gray-300 ">
             <p className="rounded-md border-b border-gray-300 p-3 bg-gray-200">
               News
             </p>
@@ -138,7 +138,7 @@ const dashboard = () => {
               </ul>
             </div>
           </div>
-          <div className="h-auto w-auto rounded-md border border-gray-300 ">
+          <div className="mt-6 lg:mt-0 h-auto w-auto rounded-md border border-gray-300 ">
             <p className="rounded-md border-b border-gray-300 p-3 bg-gray-200">
               Our Stuff
             </p>

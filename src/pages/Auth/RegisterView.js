@@ -19,7 +19,7 @@ const RegisterView = () => {
       {/* Form Container */}
       <div
         className={`justify-center items-center ${
-          onboardUser ? "px-[30rem] mt-[12rem]" : "px-[40rem] mt-[10rem]"
+          onboardUser ? "px-[30rem] mt-[12rem]" : "lg:px-[30rem] mt-[10rem]"
         } `}
       >
         <h2

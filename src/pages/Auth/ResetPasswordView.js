@@ -16,7 +16,7 @@ const ResetPasswordView = () => {
   return (
     <AuthLayout url="auth" urlPath="register">
       {/* Form Container */}
-      <div className="justify-center items-center px-[30rem] mt-[15rem]">
+      <div className="justify-center items-center lg:px-[30rem] mt-[15rem]">
         <h2 className="text-6xl text-black-100 my-2 font-bold text-left">
           Reset Password ?
         </h2>

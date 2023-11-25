@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "../../pages/Dashboard/dashboard";
+import Dashboard from "../../pages/Administrator/Dashboard/dashboard";
 import { Dropdown, DropdownLink } from "../Shared/Dropdown";
 import StorageIcon from "@mui/icons-material/Storage";
 import SendIcon from "@mui/icons-material/Send";
@@ -33,15 +33,15 @@ const Sidebar = () => {
 
   return (
     <Router>
-      <div className="flex">
-        <div className="bg-white-800 font-mono text-black w-64 h-screen shadow-lg">
+      <div className="lg:flex">
+        <div className="bg-white-800 font-mono text-black  lg:w-64 h-auto lg:h-screen shadow-lg">
           <div className="flex items-center justify-between p-4">
             {/* Your logo here */}
           </div>
-          <nav className="grid grid-cols-1">
+          <nav className="lg:grid lg:grid-cols-1">
             <Link
               to="/dashboard"
-              className={`flex justify-start gap-2  rounded-md w-3/4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 text-base ml-1 items-center p-4 hover:bg-gray-500 hover:text-white ${
+              className={`flex lg:justify-start gap-2 justify-center  rounded-md lg:w-3/4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 text-base ml-1 items-center p-4 hover:bg-gray-500 hover:text-white ${
                 selectedMenu === "dashboard" ? "bg-gray-500 text-white" : ""
               }`}
               onClick={() => handleMenuClick("dashboard")}
