@@ -1,0 +1,25 @@
+name: STAGING DEPLOYMENT CI/CD
+on:
+  push:
+    branches:
+      - staging
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+          cache: "yarn"
+      - name: Install dependencies
+        run: yarn install --immutable --immutable-cache --check-cache
+      - name: Build
+        run: yarn run build
+      - name: Configure Cpanel and Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /store.offshorefinancialtrust.com/
