@@ -62,64 +62,74 @@ const LoginView = () => {
           <div className="border-[#f7bd6d] border-[0.5px] w-full basis-2/5" />
         </div>
 
-        <div className="py-4 flex-col">
-          <input
-            className="border-white bg-white w-full border-[1px] rounded-md py-3 placeholder-[#d2cfcf] px-3 my-2 text-sm focus:border-[#0073ba9f] focus:ring-[#0073ba9f]"
-            name="emailAddress"
-            type="text"
-            placeholder="name@scholemailaddress.com"
-          />
+        {!activeUser && (
+          <Fragment>
+            <div className="py-4 flex-col">
+              <input
+                className="border-white bg-white w-full border-[1px] rounded-md py-3 placeholder-[#d2cfcf] px-3 my-2 text-sm focus:border-[#0073ba9f] focus:ring-[#0073ba9f]"
+                name="emailAddress"
+                type="text"
+                placeholder="name@scholemailaddress.com"
+              />
 
-          <input
-            className="border-white bg-white w-full border-[1px] rounded-md py-3 placeholder-[#d2cfcf] px-3 my-2 text-sm focus:border-[#0073ba9f] focus:ring-[#0073ba9f]"
-            name="password"
-            type="password"
-            placeholder="********"
-          />
+              <input
+                className="border-white bg-white w-full border-[1px] rounded-md py-3 placeholder-[#d2cfcf] px-3 my-2 text-sm focus:border-[#0073ba9f] focus:ring-[#0073ba9f]"
+                name="password"
+                type="password"
+                placeholder="********"
+              />
 
-          <div className="flex justify-end items-end">
-            <Link
-              to="/account/password-reset/"
-              className="text-right text-[#8960A6] text-sm font-normal my-2"
-            >
-              Forgot Password?
-            </Link>
-          </div>
-
-          <button
-            className="bg-black-100 hover:bg-[#8960A6] py-3 px-8 mt-3 rounded-md text-base text-white w-full text-center font-normal"
-            onClick={toggleUserLogin}
-          >
-            {isLoading && (
-              <div
-                className="animate-spin inline-block w-4 h-4 border-[2.5px] border-current border-t-transparent text-[#fff] rounded-full dark:text-[#fff] mr-2 -mb-0.5"
-                role="status"
-                aria-label="loading"
-              >
-                <span className="sr-only">Loading...</span>
+              <div className="flex justify-end items-end">
+                <Link
+                  to="/account/password-reset/"
+                  className="text-right text-[#8960A6] text-sm font-normal my-2"
+                >
+                  Forgot Password?
+                </Link>
               </div>
-            )}
-            Continue
-          </button>
 
-          {/* <button
+              <button
+                className="bg-black-100 hover:bg-[#8960A6] py-3 px-8 mt-3 rounded-md text-base text-white w-full text-center font-normal"
+                onClick={toggleUserLogin}
+              >
+                {isLoading && (
+                  <div
+                    className="animate-spin inline-block w-4 h-4 border-[2.5px] border-current border-t-transparent text-[#fff] rounded-full dark:text-[#fff] mr-2 -mb-0.5"
+                    role="status"
+                    aria-label="loading"
+                  >
+                    <span className="sr-only">Loading...</span>
+                  </div>
+                )}
+                Continue
+              </button>
+
+              {/* <button
             className="bg-black-100 hover:bg-[#8960A6] py-3 px-8 mt-3 rounded-md text-base text-white w-full text-center font-semibold"
             onClick={toggleUserPassword}
           >
             Continue
           </button> */}
-        </div>
+            </div>
 
-        <p className="text-black-100 text-sm font-light my-4">
-          By continuing to browse our site you are accepting our{" "}
-          <Link className="text-[#8960A6] hover:underline font-normal" to="/">
-            Cookie Policy
-          </Link>{" "}
-          and{" "}
-          <Link className="text-[#8960A6] hover:underline font-normal" to="/">
-            Term's of Use
-          </Link>
-        </p>
+            <p className="text-black-100 text-sm font-light my-4">
+              By continuing to browse our site you are accepting our{" "}
+              <Link
+                className="text-[#8960A6] hover:underline font-normal"
+                to="/"
+              >
+                Cookie Policy
+              </Link>{" "}
+              and{" "}
+              <Link
+                className="text-[#8960A6] hover:underline font-normal"
+                to="/"
+              >
+                Term's of Use
+              </Link>
+            </p>
+          </Fragment>
+        )}
       </div>
     </AuthLayout>
   );
